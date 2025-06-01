@@ -1,0 +1,46 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+
+.header {
+  &__container {
+    height: 700px;
+    margin: 0;
+    padding: 35px 0;  
+    @include bg-image;
+  }
+  &__items{
+    background-color: $nav-bgColor;
+    margin: 0 $margin-sm;
+    @include flexrow;
+    justify-content: space-between;
+  }
+}
+
+.wishinglist {
+  width: 100%;
+  max-width: 1200px; 
+  margin: 60px auto 0; 
+  padding: $padding-lg;
+  font-size: 1.6rem;
+  color: $wishColor;
+  @include flexcoluln;
+  gap: 20px;
+    h1 {
+      font-size: 2rem;
+      padding: 0;
+    }
+    button {
+      background-color: $btn-bgColor;
+      padding: 20px 25px;
+      border-radius: 10px;
+      color: $nav-color;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: 1px solid #EBCBC4;
+    }
+    @include responsive-tablet {
+      margin: $margin-xxl $margin-md;
+      font-size: 1rem;
+    }
+}

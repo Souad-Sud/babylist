@@ -1,0 +1,27 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.product {
+    margin: $margin-xxl $margin-lg ;
+        &__title {
+            text-align: center;
+            margin: $margin-xxl $margin-sm;
+        } 
+        &__flex {
+          @include flexrow;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: $margin-xxl $margin-md;
+        }
+        &__col {
+           @include flexcoluln;
+        }
+        &__image {
+            img{
+                border-radius: 300px ;
+            }
+        }
+
+  
+
+}

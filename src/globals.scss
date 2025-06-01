@@ -1,0 +1,22 @@
+@import './styles/variables';
+@import './styles/mixins';
+
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    font-family: $font_montserrat;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden
+    
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   
+}

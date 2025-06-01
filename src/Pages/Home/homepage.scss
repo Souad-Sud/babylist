@@ -1,0 +1,67 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+
+.homepage {
+    &__list {
+        padding: $padding-md;
+        margin: $margin-lg;
+        @include flexcoluln;
+        @include responsive-tablet {
+          @include reset-spacing;
+        }
+    }
+    &__liststyle {
+        padding: 10px;
+        margin: 100px; 
+        @include responsive-tablet {
+           @include reset-spacing;
+            width: auto;
+        } 
+    }                
+    &__listItems {
+        margin: 100px 0;
+        @include flexrow;       
+    }
+    &__introduction{      
+        padding: 10px;
+        margin: 10px 0;
+        @include flexcoluln;  
+        @include responsive-tablet {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    &__introductionstyle {  
+        padding: 20px;
+        width: 500px; 
+        @include responsive-tablet {
+           @include reset-spacing;
+            width: auto;
+        }
+    }
+    &__title {
+        padding: 10px;
+        text-align: center;
+    }
+    &__description {
+        padding: 10px;
+        margin: 10px;
+    }
+    &__img {
+        width: 100%;
+        max-width: 644px;
+        height: auto;  
+        flex-shrink: 0;
+        overflow: hidden;
+        margin: 0 50px;
+        border-radius: 10px;
+        padding: 40px 0;  
+        img {
+            width: 100%;
+            height: auto;  
+            object-fit: cover;
+            display: block;  
+        }
+    }
+}

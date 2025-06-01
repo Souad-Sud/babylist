@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import './mixins';
+
+//Spacing 
+$indent__base: 16px;
+
+//Colors 
+$wishColor: #EBCBC4;
+$hover-color: white;
+$nav-color: #D39D91;
+$nav-bgColor: #013c4fe5;
+$btn-bgColor: #697C83;
+
+//Font 
+$font_montserrat:"Montserrat", "sans-serif";
+
+//Breakpoints 
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-search: 820px;
+
+// padding
+$padding-sm: 0.5rem;
+$padding-md: 1rem;
+$padding-lg: 2rem;
+
+// margin
+$margin-sm: 0.5rem;
+$margin-md: 1rem;
+$margin-lg: 3rem;
+$margin-xxl: 5rem;
+
+// Background-colors
+
+$bgColorsOutSidDiv: (
+  primary1: #E9DDCF,
+  primary2: #CF9589,
+  primary3: #7D4D3B,
+  primary4: #908573,
+  primary5: #EFF6EF,
+  primary6: #B5BBB4,
+);
+$bgColorInsididDiv: (
+    secondary1: #9DB425,
+    secondary2: #C9B3BD,
+    secondary3: #B1857A,
+    secondary4: #C2090A,
+    secondary5: #A58B7C,
+    secondary6: #ADAEAC,
+);
+
+@each $name, $color in $bgColorsOutSidDiv{
+    .homepage__liststyle--#{$name} {
+    background-color: $color;
+    color: white;
+    margin: 100px;
+       @include responsive-tablet {
+            margin: 0;
+            padding: 0;
+        } 
+    }
+}
+
+@each $name, $color in $bgColorInsididDiv{
+    .homepage__listItems--#{$name} {
+    background-color: $color;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    margin: 50px;
+    flex-wrap: wrap;
+    }
+}
+  
+$bg-color-tertiary1: #5B422A;
+$bg-color-tertiary2: #736870;
+$bg-color-tertiary3: #CFBFB2;
+$bg-color-tertiary4: #A1876A;
+$bg-color-tertiary5: #F1B700;
+$bg-color-tertiary6: #797971;

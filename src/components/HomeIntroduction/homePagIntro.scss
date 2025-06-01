@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+
+.introduction {
+    margin: $margin-xxl $margin-lg ;
+    h2 {
+        text-align: center;
+        margin: $margin-xxl $margin-sm;
+    }
+
+}

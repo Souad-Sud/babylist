@@ -25,7 +25,7 @@ const Navigation = () => {
     });
   };
 
-  // Toggle dropdown only when "Categories" is clicked
+   
   const handleCategoriesClick = (link: string) => {
     if (link === "Categories") {
       setDropdownOpen((prev) => {
@@ -54,15 +54,27 @@ const Navigation = () => {
               className="navigation__list-item"
               onClick={toggleMenu}
             >
-              <NavLink
-                to={
-                  link.toLowerCase() === "home" ? "/" : `/${link.toLowerCase()}`
-                }
-                className="navigation__list-link"
-                onClick={() => handleCategoriesClick(link)}
-              >
-                {link}
-              </NavLink>
+              {link === "Categories" ? (
+                <span
+                  className="navigation__list-link"
+                  onClick={() => handleCategoriesClick(link)}
+                  style={{ cursor: "pointer" }}
+                >
+                  {link}
+                </span>
+              ) : (
+                <NavLink
+                  to={
+                    link.toLowerCase() === "home"
+                      ? "/"
+                      : `/${link.toLowerCase()}`
+                  }
+                  className="navigation__list-link"
+                  onClick={() => handleCategoriesClick(link)}
+                >
+                  {link}
+                </NavLink>
+              )}
 
               {link === "Categories" && dropdownOpen && (
                 <ul className="navigation__dropdown navigation__dropdown--open">
@@ -71,12 +83,12 @@ const Navigation = () => {
                       <NavLink
                         to={`/categories/${item.name
                           .toLowerCase()
-                          .replace(/\s+/g, "-")}`} // e.g. /categories/baby-names
+                          .replace(/\s+/g, "-")}`} 
                         className="navigation__dropdown-link"
                         onClick={() => {
                           setDropdownOpen(false);
                           localStorage.setItem("dropdownOpen", "false");
-                          localStorage.setItem("lastCategory", item.name); // 💾 Save selected category
+                          localStorage.setItem("lastCategory", item.name); 
                         }}
                       >
                         {item.name}

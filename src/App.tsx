@@ -17,7 +17,7 @@ function App() {
         <Route path='/wishingList' element={<WishingList />} />
         <Route path='/health' element={<ProductPage title="Health" />} />
         <Route path='/guides' element={<ProductPage title="Guides"/>} />
-        <Route path='/categories' element={<ProductPage title="Categories"/>} />
+        <Route path="/categories/:categoryName" element={<ProductPage />} />
         <Route path='/shop' element={<Shop />} />
       </Route>
     </Routes>

@@ -5,8 +5,6 @@ const Logo = () => {
         <div className='logo'>
             <img src={LogoImg} alt="logo" height={60} width={60} />
         </div>
-        
-    
     )
 }
 

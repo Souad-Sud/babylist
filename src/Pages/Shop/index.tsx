@@ -4,7 +4,7 @@ import './shop.scss';
 const Shop = () => {
   return (
     <div className="shopping">
-      <h2>SHoppp</h2>
+      <h1>Shoppp</h1>
       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos vero iure facilis dolores in saepe tempora praesentium molestias sed accusantium, itaque error ipsa, consequuntur eos, perspiciatis fuga architecto! Sint, enim?
       Nisi ex veritatis aspernatur facilis enim. Rem saepe enim laborum similique aperiam harum, minus vero praesentium alias incidunt delectus quaerat error, eveniet perferendis molestias. Minima sapiente aut libero ipsa error.
       Explicabo, deleniti? Praesentium repudiandae dicta modi, ad nihil laborum. Quod nostrum minima neque ab unde in amet illo, odio ratione magnam, doloremque sunt voluptate, dolor labore possimus totam. Voluptates, molestias.

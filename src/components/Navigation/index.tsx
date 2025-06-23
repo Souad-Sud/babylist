@@ -8,10 +8,15 @@ import { useState, useEffect } from "react";
 const Navigation = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setIsActiveLink] = useState("home");
+  // const [isSubMenu, setIsSubMenu] = useState(false);
 
   useEffect(() => {
     const saveDropDownState = localStorage.getItem("dropdownOpen");
     const saveMenuState = localStorage.getItem("menuOpen");
+    const savedLink = localStorage.getItem("activeLink");
+
+    if (savedLink) setIsActiveLink(savedLink);
 
     if (saveDropDownState === "true") setDropdownOpen(true);
     if (saveMenuState === "true") setIsOpen(true);
@@ -25,17 +30,17 @@ const Navigation = () => {
     });
   };
 
-   
   const handleCategoriesClick = (link: string) => {
     if (link === "Categories") {
-      setDropdownOpen((prev) => {
-        const newState = !prev;
-        localStorage.setItem("dropdownOpen", newState.toString());
-        return newState;
-      });
+      setDropdownOpen(true); // force open
+      localStorage.setItem("dropdownOpen", "true");
+      setIsActiveLink(link);
+      localStorage.setItem("activeLink", link);
+      // setIsSubMenu(true);
     } else {
       setDropdownOpen(false);
       localStorage.setItem("dropdownOpen", "false");
+      // setIsSubMenu(false);
     }
   };
 
@@ -51,8 +56,16 @@ const Navigation = () => {
           {pagesLinks.map((link, index) => (
             <li
               key={index}
-              className="navigation__list-item"
-              onClick={toggleMenu}
+              className={`navigation__list-item ${
+                activeLink === link ? "active" : ""
+              }`}
+              onClick={() => {
+                if (link !== "Categories") {
+                  toggleMenu();
+                  setIsActiveLink(link);
+                  localStorage.setItem("activeLink", link);
+                }
+              }}
             >
               {link === "Categories" ? (
                 <span
@@ -83,12 +96,14 @@ const Navigation = () => {
                       <NavLink
                         to={`/categories/${item.name
                           .toLowerCase()
-                          .replace(/\s+/g, "-")}`} 
+                          .replace(/\s+/g, "-")}`}
                         className="navigation__dropdown-link"
                         onClick={() => {
                           setDropdownOpen(false);
+                          // setIsSubMenu(false);
+                          setIsOpen(false); // close menu after selecting category
                           localStorage.setItem("dropdownOpen", "false");
-                          localStorage.setItem("lastCategory", item.name); 
+                          localStorage.setItem("lastCategory", item.name);
                         }}
                       >
                         {item.name}

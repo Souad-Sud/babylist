@@ -14,7 +14,6 @@ const Search = () => {
           <input
             type="text"
             placeholder="Search"
-            //   value="search"
           />
         </div>
       </div>

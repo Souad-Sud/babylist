@@ -30,16 +30,16 @@
             padding: 0 10px;
             font-size: 1.1rem;
             &:hover {
-                color: $hover-color;
+                font-weight: bold;
             }
         }
         @include responsive-tablet {
             position: absolute;
-            top: 48px;
+            top: 49px;
             width: 300px;
-            height: 50vh;
+            height: 60vh;
             right: -400px;
-            padding: 0;
+            padding: 70px 0 50px 0;
             background-color: #003549;
             transition: right 0.5s ease-in-out;
             z-index: 1000;
@@ -55,26 +55,37 @@
         }
         }
     }
-    &__dropdown {  
-        background-color: $nav-bgColor;   
+    &__list-item{
+        &.active {
+            background-color: #021a22;
+            padding: 4px;
+            border-radius: 5px;
+        }
+    }
+
+    &__dropdown {
+        background-color: $nav-bgColor;
         position: absolute;
-        top: 42px; /* just below the nav */
+        top: 42px;
         left: 330px;
         border: none;
         @include responsive-tablet {
-            display: none;
+            display: none; 
+            position: relative; 
+            left: 0;
+            top: 0;
+            width: 100%;
         }
         &--open {
-            padding-top: 0.5rem;
+            display: flex; 
+            flex-direction: column;
         }
     }
     &__dropdown-item {
-        height: 30px;        
+        height: 35px;            
     }
     &__dropdown-link{
         padding: 10px 0;
-        margin: 10px 0;
-     
-    }  
-         
+        margin: 10px 0; 
+    }          
 }
